@@ -40,7 +40,8 @@ public class Employee {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int index =0;
-        while(index <10){
+        Employee emp1= new Employee();
+        while(index <10) {
             System.out.println("Looping...");
             System.out.println("==== MENU ====");
             System.out.println("**** 1. ADD Employee");
@@ -52,29 +53,30 @@ public class Employee {
             System.out.println("Enter your choice: ");
             int choice = s.nextInt();
 
-            switch (choice){
+
+            switch (choice) {
                 case 1:
-                    Employee emp1= new Employee();
                     emp1.input();
                     break;
                 case 2:
-                    Employee emp2 = new Employee();
-                    emp2.displayEmpInformation();
+                    emp1.displayEmpInformation();
                     break;
                 case 3:
-                    Employee emp3 = new Employee();
-                    emp3.changeEmpAdr();
+                    Scanner t = new Scanner(System.in);
+                    System.out.println("Nhap vao dia chi moi: ");
+                    String td = t.nextLine();
+                    emp1.changeEmpAdr(td);
+                    emp1.displayEmpInformation();
                     break;
                 default:
                     System.out.println("Invalid Choice");
-
+                    break;
             }
 
-
-            index++;
+index++;
         }
+
     }
 
-    private void changeEmpAdr() {
-    }
+
 }
